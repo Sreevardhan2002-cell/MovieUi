@@ -4,7 +4,7 @@ const MovieContext = createContext();
 
 export const useMovieContext = () => useContext(MovieContext)
 
-export const MovieProvider = ({Children}) => {
+export const MovieProvider = ({children}) => {
     const [favorite, setFavorite] = useState([]);
 
     useEffect(() =>{
@@ -33,6 +33,6 @@ export const MovieProvider = ({Children}) => {
 }
 
     return <MovieContext.Provider value={value}>
-        {Children}
+        {children}
     </MovieContext.Provider>
 }
